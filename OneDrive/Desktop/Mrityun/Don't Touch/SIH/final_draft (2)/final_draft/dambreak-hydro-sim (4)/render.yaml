@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dambreak-hydro-sim
+    runtime: node
+    rootDir: .
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FEATHERLESS_API_KEY
+        sync: false

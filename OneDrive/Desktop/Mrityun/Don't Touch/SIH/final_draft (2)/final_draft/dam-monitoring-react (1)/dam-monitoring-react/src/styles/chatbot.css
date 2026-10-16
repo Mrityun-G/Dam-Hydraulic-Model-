@@ -1,0 +1,490 @@
+/* ============================================================
+   FLOW GUARD AI CHATBOT STYLES
+   Inner pages only - High contrast, sleek floating assistant
+   ============================================================ */
+
+.flowguard-chatbot-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: var(--font-body, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif);
+}
+
+/* 1. Floating Action Button */
+.flowguard-chatbot-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #00a99d 0%, #00776f 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 32px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 169, 157, 0.4), 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  outline: none;
+}
+
+.flowguard-chatbot-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 169, 157, 0.55), 0 4px 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #00bfae 0%, #008f85 100%);
+}
+
+.flowguard-fab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flowguard-fab-label {
+  letter-spacing: 0.02em;
+}
+
+.flowguard-fab-pulse {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: #34d399;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #34d399;
+}
+
+/* 2. Floating Chat Panel */
+.flowguard-chat-panel {
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 540px;
+  max-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: flowguard-slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes flowguard-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+.flowguard-chat-header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #0b1c24 0%, #112832 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 169, 157, 0.25);
+}
+
+.flowguard-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flowguard-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #00a99d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 169, 157, 0.4);
+}
+
+.flowguard-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.flowguard-subtitle {
+  font-size: 0.72rem;
+  color: #88c7c2;
+  margin-top: 1px;
+}
+
+.flowguard-close-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.flowguard-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Quick Question Chips */
+.flowguard-quick-chips {
+  display: flex;
+  overflow-x: auto;
+  gap: 6px;
+  padding: 8px 12px;
+  scrollbar-width: thin;
+}
+
+.flowguard-chip-btn {
+  white-space: nowrap;
+  font-size: 0.74rem;
+  padding: 5px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Messages Area */
+.flowguard-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+
+.flowguard-message-bubble {
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.86rem;
+  word-break: break-word;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.flowguard-message-content strong {
+  font-weight: 600;
+}
+
+.flowguard-message-meta {
+  font-size: 0.68rem;
+  margin-top: 4px;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.flowguard-user-bubble {
+  align-self: flex-end;
+  background: #00a99d;
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.flowguard-user-bubble .flowguard-message-meta {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.flowguard-bot-bubble {
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.flowguard-error-bubble {
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #ef4444 !important;
+}
+
+.flowguard-retry-btn {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.flowguard-retry-btn:hover {
+  opacity: 0.85;
+}
+
+.flowguard-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+.flowguard-typing .dot {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: flowguard-dot-pulse 1.2s infinite ease-in-out;
+}
+
+.flowguard-typing .dot:nth-child(2) { animation-delay: 0.2s; }
+.flowguard-typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes flowguard-dot-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Input Area */
+.flowguard-input-area {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flowguard-input-field {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 0.86rem;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.flowguard-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #00a99d;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.flowguard-send-btn:hover:not(:disabled) {
+  background: #008f85;
+  transform: scale(1.05);
+}
+
+.flowguard-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   THEME ADAPTATION FOR CHATBOT
+   ============================================================ */
+
+/* Light Theme */
+.flowguard-chatbot-root[data-theme=light] .flowguard-chat-panel,
+[data-theme=light] .flowguard-chatbot-root .flowguard-chat-panel {
+  background: #ffffff;
+  border: 1px solid #d4e0e4;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-quick-chips,
+[data-theme=light] .flowguard-chatbot-root .flowguard-quick-chips {
+  background: #f8fbfc;
+  border-bottom: 1px solid #eef3f5;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-chip-btn,
+[data-theme=light] .flowguard-chatbot-root .flowguard-chip-btn {
+  background: #ffffff;
+  color: #17242b;
+  border: 1px solid #d4e0e4;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-chip-btn:hover,
+[data-theme=light] .flowguard-chatbot-root .flowguard-chip-btn:hover {
+  background: #00a99d;
+  color: #ffffff;
+  border-color: #00a99d;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-messages-container,
+[data-theme=light] .flowguard-chatbot-root .flowguard-messages-container {
+  background: #f4f7f8;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-bot-bubble,
+[data-theme=light] .flowguard-chatbot-root .flowguard-bot-bubble {
+  background: #ffffff;
+  color: #17242b;
+  border: 1px solid #e2ebed;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-input-area,
+[data-theme=light] .flowguard-chatbot-root .flowguard-input-area {
+  background: #ffffff;
+  border-top: 1px solid #eef3f5;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-input-field,
+[data-theme=light] .flowguard-chatbot-root .flowguard-input-field {
+  background: #f8fbfc;
+  color: #17242b;
+  border: 1px solid #cbd5e1;
+}
+
+.flowguard-chatbot-root[data-theme=light] .flowguard-input-field::placeholder,
+[data-theme=light] .flowguard-chatbot-root .flowguard-input-field::placeholder {
+  color: #94a3b8;
+}
+
+/* Dark Theme */
+.flowguard-chatbot-root[data-theme=dark] .flowguard-chat-panel,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-chat-panel {
+  background: #111b23;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-quick-chips,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-quick-chips {
+  background: #0b1117;
+  border-bottom: 1px solid #1a2a35;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-chip-btn,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-chip-btn {
+  background: #16242f;
+  color: #eaf2f4;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-chip-btn:hover,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-chip-btn:hover {
+  background: #00b8a9;
+  color: #0b1117;
+  border-color: #00b8a9;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-messages-container,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-messages-container {
+  background: #0b1117;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-bot-bubble,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-bot-bubble {
+  background: #15222c;
+  color: #eaf2f4;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-input-area,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-input-area {
+  background: #111b23;
+  border-top: 1px solid #1a2a35;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-input-field,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-input-field {
+  background: #0b1117;
+  color: #eaf2f4;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=dark] .flowguard-input-field::placeholder,
+[data-theme=dark] .flowguard-chatbot-root .flowguard-input-field::placeholder {
+  color: #64748b;
+}
+
+/* Hybrid Theme */
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-chat-panel,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-chat-panel {
+  background: #111b23;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-quick-chips,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-quick-chips {
+  background: #0b1117;
+  border-bottom: 1px solid #1a2a35;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-chip-btn,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-chip-btn {
+  background: #16242f;
+  color: #eaf2f4;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-chip-btn:hover,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-chip-btn:hover {
+  background: #00a99d;
+  color: #ffffff;
+  border-color: #00a99d;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-messages-container,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-messages-container {
+  background: #0b1117;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-bot-bubble,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-bot-bubble {
+  background: #15222c;
+  color: #eaf2f4;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-input-area,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-input-area {
+  background: #111b23;
+  border-top: 1px solid #1a2a35;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-input-field,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-input-field {
+  background: #0b1117;
+  color: #eaf2f4;
+  border: 1px solid #28414d;
+}
+
+.flowguard-chatbot-root[data-theme=hybrid] .flowguard-input-field::placeholder,
+[data-theme=hybrid] .flowguard-chatbot-root .flowguard-input-field::placeholder {
+  color: #64748b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .flowguard-chatbot-root {
+    bottom: 16px;
+    right: 16px;
+  }
+  .flowguard-chat-panel {
+    width: calc(100vw - 32px);
+    height: 480px;
+  }
+  .flowguard-chatbot-fab {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}

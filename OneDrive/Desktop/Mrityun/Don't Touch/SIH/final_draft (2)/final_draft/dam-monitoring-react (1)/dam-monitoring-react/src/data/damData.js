@@ -1,0 +1,339 @@
+/**
+ * DAMBREAK HYDRO-SIM: Indian Large Dams Registry & Hydraulic Specifications
+ * Authoritative baseline data matching backend data/dams.json
+ */
+
+export const INDIAN_DAMS_REGISTRY = [
+  {
+    id: "hirakud-dam-odisha",
+    name: "Hirakud Dam",
+    damType: "Composite Masonry & Earth Fill",
+    completionYear: 1957,
+    location: {
+      river: "Mahanadi",
+      basin: "Mahanadi Basin",
+      district: "Sambalpur",
+      state: "Odisha",
+      latitude: 21.5700,
+      longitude: 83.8700,
+    },
+    heightAboveLowestFoundation: 60.96,
+    crestLengthM: 4800.0,
+    fullReservoirLevelFRL: 192.02,
+    maximumWaterLevelMWL: 192.94,
+    deadStorageLevelDSL: 179.83,
+    grossStorageCapacityMCM: 5896.0,
+    effectiveStorageCapacityMCM: 4823.0,
+    spillwayCapacityM3s: 42475.0,
+    sluiceGatesCount: 64,
+    crestGatesCount: 34,
+    catchmentAreaSqKm: 83400.0,
+    reaches: [
+      { id: "reach-1", name: "Hirakud Dam Toe - Burla", distanceFromDamKm: 3.5, channelWidthM: 950.0, manningN: 0.032, bedSlope: 0.00045, bankElevationMSL: 152.0, coordinates: [[83.8700, 21.5700], [83.8780, 21.5450], [83.8900, 21.5100]] },
+      { id: "reach-2", name: "Burla - Sambalpur City Bridge", distanceFromDamKm: 11.2, channelWidthM: 820.0, manningN: 0.035, bedSlope: 0.00040, bankElevationMSL: 145.0, coordinates: [[83.8900, 21.5100], [83.9400, 21.4850], [83.9750, 21.4650]] },
+      { id: "reach-3", name: "Sambalpur - Dhama Alluvial Plain", distanceFromDamKm: 27.5, channelWidthM: 1200.0, manningN: 0.038, bedSlope: 0.00035, bankElevationMSL: 138.0, coordinates: [[83.9750, 21.4650], [84.0100, 21.3700], [84.0450, 21.2850]] },
+      { id: "reach-4", name: "Dhama - Binka Confluence", distanceFromDamKm: 43.8, channelWidthM: 1450.0, manningN: 0.040, bedSlope: 0.00030, bankElevationMSL: 130.0, coordinates: [[84.0450, 21.2850], [84.0200, 21.1500], [83.9800, 21.0300]] },
+      { id: "reach-5", name: "Binka - Sonepur Subarnapur", distanceFromDamKm: 58.0, channelWidthM: 1600.0, manningN: 0.042, bedSlope: 0.00028, bankElevationMSL: 122.0, coordinates: [[83.9800, 21.0300], [83.9400, 20.9300], [83.9150, 20.8400]] },
+    ],
+    settlements: [
+      { id: "s-1", name: "Burla Town", district: "Sambalpur", distanceFromDamKm: 4.2, censusPopulation: 46500, elevationMSL: 154.0, lat: 21.5030, lng: 83.8710, vulnerabilityIndex: 0.88 },
+      { id: "s-2", name: "Sambalpur Municipal Corp", district: "Sambalpur", distanceFromDamKm: 12.0, censusPopulation: 335000, elevationMSL: 148.0, lat: 21.4669, lng: 83.9812, vulnerabilityIndex: 0.94 },
+      { id: "s-3", name: "Dhama Village Cluster", district: "Sambalpur", distanceFromDamKm: 28.5, censusPopulation: 18200, elevationMSL: 139.5, lat: 21.2850, lng: 84.0450, vulnerabilityIndex: 0.76 },
+      { id: "s-4", name: "Binka Nagar Panchayat", district: "Subarnapur", distanceFromDamKm: 44.2, censusPopulation: 24800, elevationMSL: 131.0, lat: 21.0300, lng: 83.9800, vulnerabilityIndex: 0.82 },
+      { id: "s-5", name: "Sonepur (Subarnapur)", district: "Subarnapur", distanceFromDamKm: 58.0, censusPopulation: 62000, elevationMSL: 123.5, lat: 20.8400, lng: 83.9150, vulnerabilityIndex: 0.85 },
+    ],
+    criticalFacilities: [
+      { id: "f-1", name: "VSSIMSAR Medical College & Hospital", facilityType: "Hospital / Trauma Center", distanceFromDamKm: 4.8, elevationMSL: 156.0, lat: 21.5020, lng: 83.8750, criticalLevel: "CRITICAL" },
+      { id: "f-2", name: "Hirakud Hydroelectric Powerhouse-1 (Burla)", facilityType: "Hydro Power Plant", distanceFromDamKm: 3.8, elevationMSL: 149.0, lat: 21.5250, lng: 83.8650, criticalLevel: "CRITICAL" },
+      { id: "f-3", name: "Sambalpur Railway Junction (ECoR)", facilityType: "Railway Infrastructure", distanceFromDamKm: 13.5, elevationMSL: 150.0, lat: 21.4720, lng: 83.9900, criticalLevel: "HIGH" },
+      { id: "f-4", name: "NH-53 Mahanadi Bridge (Sambalpur By-Pass)", facilityType: "Highway Bridge", distanceFromDamKm: 11.8, elevationMSL: 151.0, lat: 21.4600, lng: 83.9650, criticalLevel: "CRITICAL" },
+    ],
+  },
+  {
+    id: "tehri-dam-uttarakhand",
+    name: "Tehri Dam",
+    damType: "Earth and Rock-Fill Embankment",
+    completionYear: 2006,
+    location: {
+      river: "Bhagirathi (Ganga)",
+      basin: "Ganga Basin",
+      district: "Tehri Garhwal",
+      state: "Uttarakhand",
+      latitude: 30.3780,
+      longitude: 78.4800,
+    },
+    heightAboveLowestFoundation: 260.5,
+    crestLengthM: 575.0,
+    fullReservoirLevelFRL: 830.0,
+    maximumWaterLevelMWL: 835.0,
+    deadStorageLevelDSL: 740.0,
+    grossStorageCapacityMCM: 3540.0,
+    effectiveStorageCapacityMCM: 2615.0,
+    spillwayCapacityM3s: 15540.0,
+    sluiceGatesCount: 4,
+    crestGatesCount: 8,
+    catchmentAreaSqKm: 7511.0,
+    reaches: [
+      { id: "tehri-r1", name: "Tehri Dam Toe - Koteshwar Dam Reservoir", distanceFromDamKm: 9.5, channelWidthM: 140.0, manningN: 0.045, bedSlope: 0.0085, bankElevationMSL: 620.0, coordinates: [[78.4800, 30.3780], [78.5000, 30.3300], [78.5250, 30.2800]] },
+      { id: "tehri-r2", name: "Koteshwar Dam - Devprayag Confluence", distanceFromDamKm: 38.0, channelWidthM: 180.0, manningN: 0.042, bedSlope: 0.0055, bankElevationMSL: 480.0, coordinates: [[78.5250, 30.2800], [78.5600, 30.2100], [78.5990, 30.1460]] },
+      { id: "tehri-r3", name: "Devprayag - Rishikesh Ganga Gorge", distanceFromDamKm: 72.0, channelWidthM: 260.0, manningN: 0.038, bedSlope: 0.0035, bankElevationMSL: 350.0, coordinates: [[78.5990, 30.1460], [78.4800, 30.1100], [78.3000, 30.0869]] },
+      { id: "tehri-r4", name: "Rishikesh - Haridwar Floodplain", distanceFromDamKm: 96.0, channelWidthM: 550.0, manningN: 0.032, bedSlope: 0.0012, bankElevationMSL: 295.0, coordinates: [[78.3000, 30.0869], [78.2200, 30.0200], [78.1642, 29.9457]] },
+    ],
+    settlements: [
+      { id: "ts-1", name: "Koteshwar Environs", district: "Tehri Garhwal", distanceFromDamKm: 10.0, censusPopulation: 3800, elevationMSL: 625.0, lat: 30.2800, lng: 78.5250, vulnerabilityIndex: 0.92 },
+      { id: "ts-2", name: "Devprayag Confluence Town", district: "Pauri Garhwal", distanceFromDamKm: 38.5, censusPopulation: 21500, elevationMSL: 485.0, lat: 30.1460, lng: 78.5990, vulnerabilityIndex: 0.95 },
+      { id: "ts-3", name: "Rishikesh City", district: "Dehradun", distanceFromDamKm: 72.5, censusPopulation: 102000, elevationMSL: 355.0, lat: 30.0869, lng: 78.2676, vulnerabilityIndex: 0.90 },
+      { id: "ts-4", name: "Haridwar Municipal Corp", district: "Haridwar", distanceFromDamKm: 96.5, censusPopulation: 228800, elevationMSL: 298.0, lat: 29.9457, lng: 78.1642, vulnerabilityIndex: 0.92 },
+    ],
+    criticalFacilities: [
+      { id: "tf-1", name: "THDC Underground Hydro Complex (1000MW)", facilityType: "Hydro Power Plant", distanceFromDamKm: 1.2, elevationMSL: 615.0, lat: 30.3750, lng: 78.4820, criticalLevel: "CRITICAL" },
+      { id: "tf-2", name: "AIIMS Rishikesh Hospital", facilityType: "Apex Healthcare Facility", distanceFromDamKm: 74.0, elevationMSL: 365.0, lat: 30.0750, lng: 78.2850, criticalLevel: "CRITICAL" },
+      { id: "tf-3", name: "Haridwar Railway Station (NR)", facilityType: "Railway Infrastructure", distanceFromDamKm: 97.0, elevationMSL: 300.0, lat: 29.9500, lng: 78.1600, criticalLevel: "HIGH" },
+    ],
+  },
+  {
+    id: "idukki-dam-kerala",
+    name: "Idukki Dam",
+    damType: "Double Curvature Concrete Arch",
+    completionYear: 1976,
+    location: {
+      river: "Periyar",
+      basin: "Periyar Basin",
+      district: "Idukki",
+      state: "Kerala",
+      latitude: 9.8497,
+      longitude: 76.9736,
+    },
+    heightAboveLowestFoundation: 168.91,
+    crestLengthM: 365.85,
+    fullReservoirLevelFRL: 732.43,
+    maximumWaterLevelMWL: 733.00,
+    deadStorageLevelDSL: 698.0,
+    grossStorageCapacityMCM: 1996.3,
+    effectiveStorageCapacityMCM: 1459.5,
+    spillwayCapacityM3s: 5012.0,
+    sluiceGatesCount: 0,
+    crestGatesCount: 5,
+    catchmentAreaSqKm: 649.3,
+    reaches: [
+      { id: "idukki-r1", name: "Idukki Gorge - Cheruthoni Confluence", distanceFromDamKm: 2.8, channelWidthM: 85.0, manningN: 0.050, bedSlope: 0.0120, bankElevationMSL: 560.0, coordinates: [[76.9736, 9.8497], [76.9600, 9.8650], [76.9450, 9.8800]] },
+      { id: "idukki-r2", name: "Cheruthoni - Lower Periyar Dam", distanceFromDamKm: 24.0, channelWidthM: 130.0, manningN: 0.045, bedSlope: 0.0075, bankElevationMSL: 340.0, coordinates: [[76.9450, 9.8800], [76.8800, 9.9300], [76.8200, 9.9800]] },
+      { id: "idukki-r3", name: "Lower Periyar - Neriamangalam", distanceFromDamKm: 48.0, channelWidthM: 210.0, manningN: 0.038, bedSlope: 0.0035, bankElevationMSL: 120.0, coordinates: [[76.8200, 9.9800], [76.7500, 10.0200], [76.6800, 10.0550]] },
+      { id: "idukki-r4", name: "Neriamangalam - Aluva Floodplain", distanceFromDamKm: 78.0, channelWidthM: 380.0, manningN: 0.032, bedSlope: 0.0008, bankElevationMSL: 18.0, coordinates: [[76.6800, 10.0550], [76.5000, 10.0900], [76.3550, 10.1070]] },
+    ],
+    settlements: [
+      { id: "is-1", name: "Cheruthoni Town", district: "Idukki", distanceFromDamKm: 3.2, censusPopulation: 14500, elevationMSL: 565.0, lat: 9.8750, lng: 76.9550, vulnerabilityIndex: 0.95 },
+      { id: "is-2", name: "Neriamangalam", district: "Ernakulam", distanceFromDamKm: 48.5, censusPopulation: 28400, elevationMSL: 125.0, lat: 10.0550, lng: 76.6800, vulnerabilityIndex: 0.88 },
+      { id: "is-3", name: "Perumbavoor Municipality", district: "Ernakulam", distanceFromDamKm: 65.0, censusPopulation: 75000, elevationMSL: 35.0, lat: 10.1100, lng: 76.4750, vulnerabilityIndex: 0.82 },
+      { id: "is-4", name: "Aluva (Kochi Gateway)", district: "Ernakulam", distanceFromDamKm: 78.5, censusPopulation: 168000, elevationMSL: 19.5, lat: 10.1070, lng: 76.3550, vulnerabilityIndex: 0.94 },
+    ],
+    criticalFacilities: [
+      { id: "if-1", name: "Moolamattom Underground Power Station (780MW)", facilityType: "Hydro Power Plant", distanceFromDamKm: 8.0, elevationMSL: 220.0, lat: 9.8100, lng: 76.8900, criticalLevel: "CRITICAL" },
+      { id: "if-2", name: "Cochin International Airport (CIAL)", facilityType: "International Airport", distanceFromDamKm: 82.0, elevationMSL: 12.0, lat: 10.1520, lng: 76.3920, criticalLevel: "CRITICAL" },
+      { id: "if-3", name: "Aluva Manappuram Mahadeva Temple Complex", facilityType: "Cultural Heritage", distanceFromDamKm: 79.0, elevationMSL: 18.0, lat: 10.1050, lng: 76.3500, criticalLevel: "HIGH" },
+    ],
+  },
+  {
+    id: "sardar-sarovar-gujarat",
+    name: "Sardar Sarovar Dam",
+    damType: "Concrete Gravity",
+    completionYear: 2017,
+    location: {
+      river: "Narmada",
+      basin: "Narmada Basin",
+      district: "Narmada",
+      state: "Gujarat",
+      latitude: 21.8290,
+      longitude: 73.7480,
+    },
+    heightAboveLowestFoundation: 163.0,
+    crestLengthM: 1210.0,
+    fullReservoirLevelFRL: 138.68,
+    maximumWaterLevelMWL: 140.21,
+    deadStorageLevelDSL: 110.64,
+    grossStorageCapacityMCM: 9500.0,
+    effectiveStorageCapacityMCM: 5800.0,
+    spillwayCapacityM3s: 84949.0,
+    sluiceGatesCount: 30,
+    crestGatesCount: 23,
+    catchmentAreaSqKm: 88000.0,
+    reaches: [
+      { id: "ss-r1", name: "Dam Toe - Garudeshwar Weir", distanceFromDamKm: 12.0, channelWidthM: 850.0, manningN: 0.035, bedSlope: 0.00060, bankElevationMSL: 38.0, coordinates: [[73.7480, 21.8290], [73.6800, 21.8500], [73.6100, 21.8700]] },
+      { id: "ss-r2", name: "Garudeshwar - Poicha Bridge", distanceFromDamKm: 35.0, channelWidthM: 1100.0, manningN: 0.038, bedSlope: 0.00045, bankElevationMSL: 28.0, coordinates: [[73.6100, 21.8700], [73.4800, 21.8800], [73.3500, 21.8600]] },
+      { id: "ss-r3", name: "Poicha - Bharuch Estuary Gateway", distanceFromDamKm: 72.0, channelWidthM: 1800.0, manningN: 0.040, bedSlope: 0.00025, bankElevationMSL: 14.0, coordinates: [[73.3500, 21.8600], [73.1500, 21.7800], [72.9800, 21.7000]] },
+    ],
+    settlements: [
+      { id: "sss-1", name: "Kevadia (Ekta Nagar)", district: "Narmada", distanceFromDamKm: 4.5, censusPopulation: 26500, elevationMSL: 45.0, lat: 21.8380, lng: 73.7150, vulnerabilityIndex: 0.88 },
+      { id: "sss-2", name: "Garudeshwar", district: "Narmada", distanceFromDamKm: 12.5, censusPopulation: 18900, elevationMSL: 39.0, lat: 21.8700, lng: 73.6100, vulnerabilityIndex: 0.80 },
+      { id: "sss-3", name: "Bharuch City & Industrial Corridor", district: "Bharuch", distanceFromDamKm: 72.0, censusPopulation: 221000, elevationMSL: 15.0, lat: 21.7051, lng: 72.9959, vulnerabilityIndex: 0.94 },
+    ],
+    criticalFacilities: [
+      { id: "ssf-1", name: "Statue of Unity & Riverfront Promenade", facilityType: "National Monument / Tourism", distanceFromDamKm: 3.8, elevationMSL: 52.0, lat: 21.8380, lng: 73.7190, criticalLevel: "CRITICAL" },
+      { id: "ssf-2", name: "River Bed Power House RBPH (1200MW)", facilityType: "Hydro Power Plant", distanceFromDamKm: 0.8, elevationMSL: 32.0, lat: 21.8280, lng: 73.7500, criticalLevel: "CRITICAL" },
+      { id: "ssf-3", name: "Golden Bridge NH-8 Bharuch (Narmada)", facilityType: "Strategic Highway Bridge", distanceFromDamKm: 73.0, elevationMSL: 18.0, lat: 21.7010, lng: 72.9850, criticalLevel: "CRITICAL" },
+    ],
+  },
+  {
+    id: "nagarjuna-sagar-telangana-ap",
+    name: "Nagarjuna Sagar Dam",
+    damType: "Masonry Gravity",
+    completionYear: 1967,
+    location: {
+      river: "Krishna",
+      basin: "Krishna Basin",
+      district: "Nalgonda / Guntur",
+      state: "Telangana / Andhra Pradesh",
+      latitude: 16.5775,
+      longitude: 79.3130,
+    },
+    heightAboveLowestFoundation: 124.66,
+    crestLengthM: 4865.0,
+    fullReservoirLevelFRL: 179.83,
+    maximumWaterLevelMWL: 181.05,
+    deadStorageLevelDSL: 155.45,
+    grossStorageCapacityMCM: 11560.0,
+    effectiveStorageCapacityMCM: 6800.0,
+    spillwayCapacityM3s: 42475.0,
+    sluiceGatesCount: 12,
+    crestGatesCount: 26,
+    catchmentAreaSqKm: 215000.0,
+    reaches: [
+      { id: "ns-r1", name: "Dam Toe - Macherla Valley", distanceFromDamKm: 16.0, channelWidthM: 900.0, manningN: 0.034, bedSlope: 0.00050, bankElevationMSL: 78.0, coordinates: [[79.3130, 16.5775], [79.4200, 16.5500], [79.5400, 16.5200]] },
+      { id: "ns-r2", name: "Macherla - Pulichintala Dam Reservoir", distanceFromDamKm: 48.0, channelWidthM: 1250.0, manningN: 0.036, bedSlope: 0.00038, bankElevationMSL: 52.0, coordinates: [[79.5400, 16.5200], [79.7500, 16.6000], [79.9500, 16.7200]] },
+      { id: "ns-r3", name: "Pulichintala - Vijayawada Prakasam Barrage", distanceFromDamKm: 88.0, channelWidthM: 1600.0, manningN: 0.040, bedSlope: 0.00025, bankElevationMSL: 24.0, coordinates: [[79.9500, 16.7200], [80.2500, 16.6500], [80.6100, 16.5080]] },
+    ],
+    settlements: [
+      { id: "nss-1", name: "Hill Colony / Vijayapuri South", district: "Nalgonda", distanceFromDamKm: 2.5, censusPopulation: 22000, elevationMSL: 84.0, lat: 16.5650, lng: 79.3250, vulnerabilityIndex: 0.86 },
+      { id: "nss-2", name: "Macherla Municipality", district: "Guntur", distanceFromDamKm: 24.0, censusPopulation: 65000, elevationMSL: 72.0, lat: 16.4800, lng: 79.4300, vulnerabilityIndex: 0.78 },
+      { id: "nss-3", name: "Vijayawada Municipal Corporation", district: "NTR", distanceFromDamKm: 88.5, censusPopulation: 1490000, elevationMSL: 26.0, lat: 16.5062, lng: 80.6480, vulnerabilityIndex: 0.95 },
+    ],
+    criticalFacilities: [
+      { id: "nsf-1", name: "Nagarjuna Sagar Main Hydro Powerhouse (810MW)", facilityType: "Hydro Power Plant", distanceFromDamKm: 1.0, elevationMSL: 68.0, lat: 16.5750, lng: 79.3180, criticalLevel: "CRITICAL" },
+      { id: "nsf-2", name: "Prakasam Barrage & Delta Headworks", facilityType: "Major Irrigation Barrage", distanceFromDamKm: 88.0, elevationMSL: 22.0, lat: 16.5050, lng: 80.6100, criticalLevel: "CRITICAL" },
+    ],
+  },
+  {
+    id: "kallanai-grand-anicut-tamil-nadu",
+    name: "Kallanai Dam (Grand Anicut)",
+    damType: "Ancient Solid Stone Masonry Anicut",
+    completionYear: 150,
+    location: {
+      river: "Cauvery",
+      basin: "Cauvery Basin",
+      district: "Thanjavur",
+      state: "Tamil Nadu",
+      latitude: 10.8358,
+      longitude: 78.8197,
+    },
+    heightAboveLowestFoundation: 5.4,
+    crestLengthM: 329.0,
+    fullReservoirLevelFRL: 59.2,
+    maximumWaterLevelMWL: 61.5,
+    deadStorageLevelDSL: 56.0,
+    grossStorageCapacityMCM: 185.0,
+    effectiveStorageCapacityMCM: 160.0,
+    spillwayCapacityM3s: 12500.0,
+    sluiceGatesCount: 30,
+    crestGatesCount: 15,
+    catchmentAreaSqKm: 66880.0,
+    reaches: [
+      { id: "ka-r1", name: "Grand Anicut Head - Vennar Bifurcation", distanceFromDamKm: 4.5, channelWidthM: 450.0, manningN: 0.030, bedSlope: 0.00032, bankElevationMSL: 56.0, coordinates: [[78.8197, 10.8358], [78.8600, 10.8300], [78.9000, 10.8200]] },
+      { id: "ka-r2", name: "Vennar Bifurcation - Thiruvaiyaru", distanceFromDamKm: 18.0, channelWidthM: 520.0, manningN: 0.032, bedSlope: 0.00028, bankElevationMSL: 48.0, coordinates: [[78.9000, 10.8200], [79.0000, 10.8600], [79.1050, 10.8850]] },
+      { id: "ka-r3", name: "Thiruvaiyaru - Kumbakonam Delta Reach", distanceFromDamKm: 42.0, channelWidthM: 620.0, manningN: 0.035, bedSlope: 0.00022, bankElevationMSL: 32.0, coordinates: [[79.1050, 10.8850], [79.2400, 10.9200], [79.3800, 10.9600]] },
+    ],
+    settlements: [
+      { id: "kas-1", name: "Kallanai Village", district: "Thanjavur", distanceFromDamKm: 1.2, censusPopulation: 5200, elevationMSL: 58.0, lat: 10.8380, lng: 78.8250, vulnerabilityIndex: 0.72 },
+      { id: "kas-2", name: "Thiruvaiyaru Heritage Town", district: "Thanjavur", distanceFromDamKm: 18.5, censusPopulation: 32000, elevationMSL: 49.0, lat: 10.8850, lng: 79.1050, vulnerabilityIndex: 0.85 },
+      { id: "kas-3", name: "Kumbakonam City", district: "Thanjavur", distanceFromDamKm: 42.5, censusPopulation: 140000, elevationMSL: 34.0, lat: 10.9600, lng: 79.3800, vulnerabilityIndex: 0.90 },
+    ],
+    criticalFacilities: [
+      { id: "kaf-1", name: "Kallanai Historic UNESCO World Heritage Structure", facilityType: "World Heritage Hydraulic Monument", distanceFromDamKm: 0.1, elevationMSL: 59.5, lat: 10.8358, lng: 78.8197, criticalLevel: "CRITICAL" },
+      { id: "kaf-2", name: "Thanjavur Medical College Hospital (Relief Center)", facilityType: "Regional Apex Hospital", distanceFromDamKm: 22.0, elevationMSL: 55.0, lat: 10.7750, lng: 79.1200, criticalLevel: "HIGH" },
+    ],
+  },
+];
+
+export const DEFAULT_BREACH_PARAMS = {
+  selectedDamId: "hirakud-dam-odisha",
+  failureMode: "overtopping",
+  reservoirWaterLevel: 192.94,
+  waterDepthAboveInvert: 35.0,
+  reservoirVolumeAtBreachMCM: 5896.0,
+  breachBottomWidth: 160.0,
+  breachSideSlope: 1.0,
+  breachAverageWidth: 195.0,
+  breachInvertElevation: 157.94,
+  breachFormationTimeHours: 1.85,
+  initialFlowM3s: 350.0,
+  simulationDurationHours: 24.0,
+  empiricalEquation: "Froehlich_2008",
+  selectedDemResolution: "10m_CartoDEM",
+  selectedSolver: "2D_SWE_FiniteVolume",
+};
+
+/**
+ * Returns authentic dam-specific breach parameters tailored to physical dimensions
+ */
+export function getDamDefaultBreachScenario(damId, failureMode = "overtopping") {
+  const dam = INDIAN_DAMS_REGISTRY.find((d) => d.id === damId) || INDIAN_DAMS_REGISTRY[0];
+  const isOvertopping = failureMode === "overtopping";
+  const isPiping = failureMode === "piping";
+  const isRiverSurge = failureMode === "river_blockage";
+  const isSunnyDay = failureMode === "sunny_day";
+
+  let poolLevel = dam.maximumWaterLevelMWL;
+  let storageMCM = dam.grossStorageCapacityMCM;
+  let widthMultiplier = 2.6;
+  let timeMultiplier = 1.0;
+
+  if (isPiping) {
+    poolLevel = dam.fullReservoirLevelFRL;
+    storageMCM = dam.effectiveStorageCapacityMCM || dam.grossStorageCapacityMCM * 0.8;
+    widthMultiplier = 1.8;
+    timeMultiplier = 1.35;
+  } else if (isRiverSurge) {
+    poolLevel = Number(((dam.maximumWaterLevelMWL + dam.fullReservoirLevelFRL) / 2).toFixed(1));
+    storageMCM = Math.round(dam.grossStorageCapacityMCM * 0.92);
+    widthMultiplier = 2.2;
+    timeMultiplier = 0.85;
+  } else if (isSunnyDay) {
+    poolLevel = dam.fullReservoirLevelFRL;
+    storageMCM = dam.effectiveStorageCapacityMCM || dam.grossStorageCapacityMCM * 0.8;
+    widthMultiplier = 1.4;
+    timeMultiplier = 1.5;
+  }
+
+  const invertElevation = Number((dam.maximumWaterLevelMWL - dam.heightAboveLowestFoundation * 0.75).toFixed(1));
+  const waterDepth = Number(Math.max(2.5, poolLevel - invertElevation).toFixed(1));
+
+  let breachWidth = Math.max(25, Math.min(450, Math.round(dam.heightAboveLowestFoundation * widthMultiplier)));
+  if (dam.id.includes("kallanai")) {
+    breachWidth = 45;
+  }
+
+  // Froehlich tf calculation
+  const volumeM3 = Math.max(1_000_000, storageMCM * 1_000_000);
+  const hw = Math.max(2.0, waterDepth);
+  const tfSec = 63.2 * Math.sqrt(volumeM3 / (9.80665 * Math.pow(hw, 2)));
+  const baseFormationTime = Math.max(0.4, Math.min(4.5, Number((tfSec / 3600).toFixed(2))));
+  const formationTime = Number((baseFormationTime * timeMultiplier).toFixed(2));
+
+  return {
+    selectedDamId: dam.id,
+    failureMode,
+    reservoirWaterLevel: poolLevel,
+    waterDepthAboveInvert: waterDepth,
+    reservoirVolumeAtBreachMCM: storageMCM,
+    breachBottomWidth: Math.round(breachWidth * 0.75),
+    breachAverageWidth: breachWidth,
+    breachSideSlope: isPiping ? 0.75 : isOvertopping ? 1.0 : 0.5,
+    breachInvertElevation: invertElevation,
+    breachFormationTimeHours: formationTime,
+    initialFlowM3s: isRiverSurge ? 600 : isOvertopping ? 450 : 350,
+    simulationDurationHours: 24,
+    empiricalEquation: "Froehlich_2008",
+    selectedDemResolution: "10m_CartoDEM",
+    selectedSolver: "2D_SWE_FiniteVolume",
+  };
+}
+

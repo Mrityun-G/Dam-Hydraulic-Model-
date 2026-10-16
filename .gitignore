@@ -1,0 +1,9 @@
+# Local project dependencies and generated output
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/.venv/
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/node_modules/
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/dist/
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/build/
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/.env
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/.env.*
+!OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/.env.example
+OneDrive/Desktop/Mrityun/Don't Touch/SIH/final_draft (2)/final_draft/**/logs/

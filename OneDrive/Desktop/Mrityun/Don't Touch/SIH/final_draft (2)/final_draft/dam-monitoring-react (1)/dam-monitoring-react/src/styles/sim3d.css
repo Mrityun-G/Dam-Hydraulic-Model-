@@ -1,0 +1,419 @@
+/* ============================================================
+   DAM SENTINEL AI / FLOW GUARD: 3D SIMULATION STYLES
+   Cyber-dark WebGL viewport, HUD, timeline, and probe inspector
+   ============================================================ */
+
+.sim3d-viewport-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #03080c;
+  border: 1px solid rgba(0, 230, 200, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 24px rgba(0, 230, 200, 0.08);
+  margin-bottom: 24px;
+}
+
+.sim3d-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  min-height: 520px;
+  background: radial-gradient(circle at 50% 30%, #0c202d 0%, #03080c 80%);
+  cursor: grab;
+}
+
+.sim3d-canvas-container:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+  .sim3d-canvas-container {
+    height: 420px;
+    min-height: 380px;
+  }
+}
+
+/* 3D Viewport Header Bar */
+.sim3d-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, rgba(8, 22, 34, 0.95) 0%, rgba(3, 10, 16, 0.98) 100%);
+  border-bottom: 1px solid rgba(0, 230, 200, 0.2);
+}
+
+.sim3d-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sim3d-title {
+  font-size: 13px;
+  font-weight: 800;
+  font-family: monospace;
+  letter-spacing: 1.2px;
+  color: #00e6c8;
+}
+
+.sim3d-badge {
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(0, 230, 200, 0.12);
+  color: #00e6c8;
+  border: 1px solid rgba(0, 230, 200, 0.3);
+}
+
+/* 3D Top Floating Camera Controls */
+.sim3d-cam-controls {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(4, 12, 18, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 230, 200, 0.25);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.sim3d-cam-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: monospace;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.sim3d-cam-btn:hover {
+  background: rgba(0, 230, 200, 0.15);
+  border-color: #00e6c8;
+  color: #00e6c8;
+}
+
+.sim3d-cam-btn.active {
+  background: #00e6c8;
+  color: #03080c;
+  font-weight: 700;
+  border-color: #00e6c8;
+}
+
+/* 3D Floating HUD Metrics */
+.sim3d-hud-metrics {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  background: rgba(4, 12, 18, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 230, 200, 0.3);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: monospace;
+  color: #fff;
+  min-width: 230px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.sim3d-hud-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #00e6c8;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sim3d-hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 5px 0;
+  font-size: 11px;
+}
+
+.sim3d-hud-label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.sim3d-hud-val {
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.sim3d-hud-val.danger {
+  color: #f87171;
+}
+
+.sim3d-hud-val.warning {
+  color: #fbbf24;
+}
+
+/* Simulation Timeline Bar */
+.sim3d-timeline-bar {
+  background: linear-gradient(180deg, rgba(7, 20, 30, 0.96) 0%, rgba(3, 10, 16, 0.98) 100%);
+  border-top: 1px solid rgba(0, 230, 200, 0.2);
+  padding: 14px 20px;
+}
+
+.sim3d-timeline-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.sim3d-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim3d-btn {
+  background: rgba(0, 230, 200, 0.08);
+  border: 1px solid rgba(0, 230, 200, 0.3);
+  color: #00e6c8;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: monospace;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.sim3d-btn:hover {
+  background: rgba(0, 230, 200, 0.2);
+  border-color: #00e6c8;
+  box-shadow: 0 0 10px rgba(0, 230, 200, 0.3);
+}
+
+.sim3d-btn.primary {
+  background: linear-gradient(135deg, #00e6c8 0%, #0284c7 100%);
+  color: #03080c;
+  font-weight: 800;
+}
+
+.sim3d-btn.primary:hover {
+  box-shadow: 0 0 16px rgba(0, 230, 200, 0.6);
+}
+
+.sim3d-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.sim3d-time-display {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 800;
+  color: #00e6c8;
+  letter-spacing: 1px;
+}
+
+.sim3d-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.sim3d-slider {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  outline: none;
+}
+
+.sim3d-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00e6c8;
+  box-shadow: 0 0 10px rgba(0, 230, 200, 0.8);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.sim3d-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+/* Layer Toggles Row */
+.sim3d-layers-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sim3d-layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+}
+
+.sim3d-layer-toggle input[type="checkbox"] {
+  accent-color: #00e6c8;
+  cursor: pointer;
+}
+
+/* Interactive Probe Modal / Floating Card */
+.sim3d-probe-card {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  z-index: 30;
+  background: rgba(5, 14, 22, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 230, 200, 0.35);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: monospace;
+  color: #fff;
+  min-width: 250px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.sim3d-probe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 4px;
+}
+
+.sim3d-probe-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #00e6c8;
+}
+
+.sim3d-probe-close {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sim3d-probe-close:hover {
+  color: #fff;
+}
+
+/* Viewport Overlays (Empty, Loading, Error) */
+.sim3d-state-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: rgba(3, 8, 12, 0.88);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  font-family: monospace;
+}
+
+.sim3d-state-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 0.8px;
+}
+
+.sim3d-state-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* Compact Non-Blocking Dam Model Status Panel */
+.sim3d-model-status-panel {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 25;
+  background: rgba(4, 12, 18, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: monospace;
+  color: #fff;
+  min-width: 250px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+}
+
+.sim3d-model-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 800;
+  color: #f59e0b;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+  padding-bottom: 3px;
+}
+
+.sim3d-model-status-body {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sim3d-model-status-sub {
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 3px;
+}

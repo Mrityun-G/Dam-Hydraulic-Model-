@@ -1,0 +1,6 @@
+{
+  "name": "DAMBREAK HYDRO-SIM",
+  "description": "National Dam Break & River Blockage Hydrodynamic Inundation Decision Support System (SPH 3D, Delft3D-FM, GEE Sentinel SAR, and CWC/SDMA Open Datasets for Indian Dams)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
